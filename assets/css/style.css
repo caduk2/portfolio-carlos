@@ -1,0 +1,341 @@
+@import url('tooltip.css');
+@import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
+@import url('reset.css');
+@import url('header.css');
+
+:root,
+:root[data-theme='light'] {
+    --primary-color: black;
+    --primary-color-semi: rgb(42, 42, 42);
+    --primary-color-reverse: white;
+    --secondary-color: rgb(76, 76, 76);
+    --secondary-color-semi: rgb(206, 208, 211);
+    --text-color: rgb(200, 199, 199);
+    --bg-color: rgba(107, 109, 111, 0.6);
+}
+    
+:root[data-theme='dark'] {
+    --primary-color: white;
+    --primary-color-semi: #f0f0f0;
+    --primary-color-reverse: black;
+    --secondary-color: gray;
+    --secondary-color-semi: rgb(206, 208, 211);
+    --text-color: black;
+    --bg-color: rgba(227, 229, 235, 0.6);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    /* background-color: var(--primary-color-semi); */
+    margin: auto;
+    width: 90vw;
+    height: 100vh;
+    background-image: url(../img/mk2-01-grey.png);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-attachment: fixed;    
+    background-position: top center;
+}
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 50rem;
+}
+
+.nav-button {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;  
+    width: 6rem;
+    height: 6rem;
+    background: transparent;
+    border: none;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 2;
+
+    .arrow {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        width: 6rem;
+        height: 4rem;
+        clip-path: polygon(54% 0, 54% 77%, 70% 50%, 70% 65%, 50% 100%, 30% 65%, 30% 50%, 46% 77%, 46% 0);
+        background-color: var(--primary-color-reverse);
+        z-index: 3;   
+    }
+
+    .effect-arrow-01 {
+        position: absolute;
+        width: 0.57rem;
+        height: 3rem;
+        background: linear-gradient(to bottom, var(--primary-color) 10%, var(--primary-color-reverse) 100%);
+        top: 1rem;
+        left: 2.72rem;
+        z-index: 2;
+    }
+
+    .effect-arrow-02 {
+        position: absolute;
+        width: 1.05rem;
+        height: 3rem;
+        background: linear-gradient(to bottom, var(--primary-color-reverse) 5%, var(--primary-color-semi) 100%);
+        top: 1rem;
+        left: 2.474rem;
+        z-index: 1;
+    }
+}
+
+.nav-button:hover{
+    background: linear-gradient(150deg, var(--secondary-color) 1%, var(--primary-color-semi) 70%, var(--secondary-color) 99.5%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 0 1px #4D4D4D;
+    border: 3px solid var(--primary-color-reverse);
+    border-radius: 6rem;
+
+    .arrow {
+        position: absolute;   
+    }
+
+    .effect-arrow-01{
+        top: 0.85rem;
+        left: 2.56rem;
+    }
+
+    .effect-arrow-02 {
+        top: 0.85rem;
+        left: 2.3rem;
+    }
+}
+
+.home-box {
+    display: flex;
+    position: relative;
+}
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--bg-color);
+    width: 97vw;
+    height: 95vh;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    gap: 1rem;
+}
+
+.background-circle {
+    width: 40rem;
+    height: 40rem;
+    position: absolute;
+    border: 0.2rem solid rgb(137, 132, 132);
+    border-radius: 50%;
+    z-index: 0;
+    top: 15rem;
+    left: -10rem;
+    animation: borderGlow 5s forwards;
+    animation-iteration-count: infinite;
+}
+
+.background-circle::after {
+    content: "";
+    position: absolute;
+    width: 60rem;
+    height: 60rem;
+    border: 0.2rem solid rgb(137, 132, 132);
+    border-radius: 50%;
+    z-index: 0;
+    top: -40rem;
+    left: 50rem;
+    animation: borderGlow 5s forwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes borderGlow {
+    0% {
+        border-color: rgba(123, 123, 116, 0.5);
+        box-shadow: 0 0 15px rgba(123, 123, 116, 0.5);
+    }
+    50% {
+        border-color: rgba(200, 200, 200, 1);
+        box-shadow: 0 0 30px rgba(200, 200, 200, 1);
+    }
+    100% {
+        border-color: rgba(123, 123, 116, 0.5);
+        box-shadow: 0 0 15px rgba(123, 123, 116, 0.5);
+    }
+}
+
+
+.home-photo img {
+    position: absolute;
+    pointer-events: none;
+    z-index: 2;
+    left: 33rem;
+    bottom: -11rem; 
+    width: 39%;
+    height: auto;
+    filter: drop-shadow(0 -5px 10px rgba(133, 133, 133, 0.9));  
+}
+
+.home-box p {
+    position: relative;
+    top: -2rem;
+    right: 38rem;
+    color: var(--primary-color-reverse);
+    font-size: 1.5rem;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.home-name {
+    position: relative;
+    top: 2rem;
+    font-family: "Varela", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 8.5rem; 
+    white-space: nowrap;
+    color: var(--text-color);
+    max-width: inherit;
+    transform: scaleY(2);
+    user-select: none;
+    font-weight: bold;
+    position: relative;
+
+    text-shadow: 
+    2px 5px 5px rgba(0, 0, 0, 0.4),
+    2px 10px 10px rgba(0, 0, 0, 0.3),
+    2px 15px 15px rgba(0, 0, 0, 0.2);
+
+    overflow: hidden;
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+
+    gap: 3rem;
+}
+
+h2 {
+    font-family: "Varela", sans-serif;
+    font-weight: 400;
+    font-style:normal;
+    font-size: 3rem;
+    color: var(--text-color);
+    max-width: 60rem;
+    text-align: left;
+    text-transform: uppercase;
+    margin-top: 8rem;
+}
+
+.name-local {
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.info-box ul {  
+    cursor: pointer;    
+    list-style: none;    
+    user-select: none;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 13rem;
+    background: linear-gradient(150deg, rgb(84, 84, 84) 1%,rgb(206, 208, 211) 70%, rgb(84, 84, 84) 99.5%);    
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 0 1px #4D4D4D;    
+    border: 2px solid var(--primary-color);    
+    border-radius: 5px;    
+    font-size: 1.8rem;
+}
+
+.info-box ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 5rem;    
+    padding: 0.5rem;
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center center;
+}
+
+.info-box ul li a {
+    color: #181717;
+}
+
+.info-box ul li:hover {    
+    background: linear-gradient(150deg, rgb(84, 84, 84) 1%,rgb(206, 208, 211) 70%, rgb(84, 84, 84) 99.5%);  
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 0 1px #4D4D4D;   
+    border-radius: 5px;
+    transform: scale(1.2) translateZ(0);
+    
+    .bi-github {
+        display: inline-block;
+        background: linear-gradient(45deg, #000000, #2c2c2c, #434343); /* Gradiente em tons de preto */
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;;
+    }
+
+    .bi-linkedin {
+        display: inline-block;
+        background: linear-gradient(-15deg, #0077B5, #00aaff, #001f3f); /* Gradiente em tons de azul */
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .bi-instagram {
+        display: inline-block;
+        background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcb045); /* Gradiente do Instagram */
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+}
+
+.shadow-box {
+    width: 12.1rem;
+    height: 0.5rem;
+    background: #181717 0.1;
+    border-radius: 80%;
+    box-shadow: 0 30px 15px 10px #333;
+    margin-top: -4rem;
+}
+
+.continue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color-reverse);
+    font-size: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    line-height: 1.6;
+}
+
+.continue p {
+    margin: 0;
+}
+
+.continue h4 {
+    margin-top: 5rem;
+}
+
+

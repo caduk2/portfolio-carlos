@@ -1,0 +1,106 @@
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    width: 93.5vw;
+    background: linear-gradient(150deg, var(--primary-color) 10%, var(--primary-color-semi) 30%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 3rem;
+    border-radius: 1rem;
+    z-index: 2;    
+}
+
+.logo-marca {
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    height: 3rem;
+    margin-left: 2rem;
+}
+
+.logo-marca img {
+    pointer-events: none;
+    height: 3rem;
+    width: 3rem;
+    margin-right: 0.5rem;    
+    border: 0.1rem solid var(--primary-color);
+    outline: 0.15rem solid var(--primary-color-reverse);
+    border-radius: 3rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 0 1px #4D4D4D;
+}
+
+.logo-marca h1 {
+    display: flex;
+    align-items: center;
+    font-family: "Varela", sans-serif;
+    font-style: normal;
+    font-size: 1.8rem;
+    color: var(--primary-color-reverse);
+    letter-spacing: 0.05rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    z-index: 5;
+}
+
+header nav ul li {
+    display: flex;
+    margin-right: 40px;    
+}
+
+header nav ul li:hover{
+    transform: translateY(-2px);
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 1rem 1rem;
+    color: var(--primary-color-reverse);
+}
+
+.header__toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+#toggleTheme {
+    font-size: 1.5rem;
+    color: var(--primary-color-reverse);
+    cursor: pointer;
+    transition: ease-in-out .4s;
+}
+
+.close-menu {
+    cursor: pointer;
+    user-select: none;
+    padding: 10px 20px;
+    margin-right: 2rem;
+    background: linear-gradient(150deg, rgb(84, 84, 84) 1%,rgb(206, 208, 211) 70%, rgb(84, 84, 84) 99.5%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 0 1px #4D4D4D;
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px;    
+    font-size: 1rem;
+}
+
+.close-menu:hover {
+    background: linear-gradient(150deg, rgba(155, 157, 159, 1) 15%, rgb(0, 0, 0) 85%);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 0 1px #4D4D4D;
+    transform: translateY(-2px);
+}
