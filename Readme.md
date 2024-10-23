@@ -2,7 +2,7 @@
 
 Este projeto foi criado para demonstrar habilidades em manipulação de DOM e frontend através de um site portfólio em construção.
 
-## [Acesse o site](https://caduk2.github.io/portfolio-carlos/).
+## [Acesse o site](https://caduk2.github.io/portfolio-carlos/){:target="_blank"}
 - Responsividade ainda não foi aplicada. 
 - Projeto inicial sendo desenvolvido em 1920 x 1080.
 
